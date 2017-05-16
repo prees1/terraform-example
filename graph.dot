@@ -1,0 +1,11 @@
+digraph {
+	compound = "true"
+	newrank = "true"
+	subgraph "root" {
+		"[root] aws_instance.web" [label = "aws_instance.web", shape = "box"]
+		"[root] provider.aws" [label = "provider.aws", shape = "diamond"]
+		"[root] aws_instance.web" -> "[root] provider.aws"
+		"[root] provider.aws (close)" -> "[root] aws_instance.web"
+	}
+}
+
